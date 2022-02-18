@@ -37,7 +37,7 @@ jobs:
       DIST: ${{ matrix.platform.dist }}
 
     steps:
-      - name: Clone the module
+      - name: Clone the connector
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
@@ -51,3 +51,22 @@ jobs:
 
       - name: Create packages
         run: ./packpack/packpack
+
+      - name: Deploy packages
+        # We need this step to run only on push with tag 
+        if: ${{ github.event_name == 'push' && github.event.ref_type == 'tag' }}
+        env:
+          RWS_URL_PART: https://rws.tarantool.org/release/enabled
+          RWS_AUTH: ${{ secrets.RWS_AUTH }}
+          PRODUCT_NAME: tarantool-c
+        run: |
+          CURL_CMD="curl -LfsS \
+            -X PUT ${RWS_URL_PART}/${OS}/${DIST} \
+            -u ${RWS_AUTH} \
+            -F product=${PRODUCT_NAME}"
+
+          for f in $(ls -I '*build*' -I '*.changes' ./build); do
+            CURL_CMD+=" -F $(basename ${f})=@./build/${f}"
+          done
+
+          echo ${CURL_CMD}
