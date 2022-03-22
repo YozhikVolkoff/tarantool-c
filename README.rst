@@ -2,16 +2,16 @@
                             Tarantool C client libraries
 -------------------------------------------------------------------------------
 
-.. image:: https://github.com/tarantool/tarantool-c/workflows/fast_testing/badge.svg
-    :target: https://github.com/tarantool/tarantool-c/actions/workflows/fast_testing.yml?query=branch%3Amaster
+.. image:: https://github.com/YozhikVolkoff/tarantool-c/workflows/Linux%20testing/badge.svg
+    :target: https://github.com/YozhikVolkoff/tarantool-c/actions/workflows/packaging.yml?query=branch%3Amaster
     :alt: Linux testing
 
-.. image:: https://github.com/tarantool/tarantool-c/workflows/osx_testing/badge.svg
-    :target: https://github.com/tarantool/tarantool-c/actions/workflows/osx_testing.yml?query=branch%3Amaster
+.. image:: https://github.com/YozhikVolkoff/tarantool-c/workflows/OS%20X%20testing/badge.svg
+    :target: https://github.com/YozhikVolkoff/tarantool-c/actions/workflows/osx_testing.yml?query=branch%3Amaster
     :alt: OS X testing
 
-.. image:: https://github.com/tarantool/tarantool-c/workflows/packaging/badge.svg
-    :target: https://github.com/tarantool/tarantool-c/actions/workflows/packaging.yml?query=branch%3Amaster
+.. image:: https://github.com/YozhikVolkoff/tarantool-c/workflows/Packaging/badge.svg
+    :target: https://github.com/YozhikVolkoff/tarantool-c/actions/workflows/packaging.yml?query=branch%3Amaster
     :alt: Packaging
 
 ===========================================================
